@@ -1,8 +1,11 @@
- #include "quotes.h"
-#include <time.h>
+// main.c
+#include "quotes.h"
 
 int main() {
-    char * quotes[MAX_QUOTES] = {
+    char *quotes[MAX_QUOTES];
+    int count = 10;
+
+    char *initial_quotes[MAX_QUOTES] = {
         "Programmer - An organism that turns caffeine into code",
         "Why do programmers prefer dark mode? Because light attracts bugs.",
         "If debugging is the process of removing software bugs, then programming must be the process of putting them in.",
@@ -15,7 +18,17 @@ int main() {
         "There are only 10 types of people in the world: Those who understand binary and those who don't."
     };
 
+    for (int i = 0; i < count; i++) {
+        quotes[i] = malloc(strlen(initial_quotes[i]) + 1);
+        strcpy(quotes[i], initial_quotes[i]);
+    }
+
     srand(time(NULL));
-    print_random_quote(quotes);
+    menu(quotes, &count);
+
+    for (int i = 0; i < count; i++) {
+        free(quotes[i]);
+    }
+
     return 0;
 }
