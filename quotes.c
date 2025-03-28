@@ -47,10 +47,9 @@ void display_quotes(char **quotes, int count) {
 
 void menu(char **quotes, int *count) {
     int choice;
-    char quote[MAX_LENGTH];
     int index;
-
     do {
+        char quote[MAX_LENGTH];
         printf("\nMenu:\n");
         printf("1. Display all quotes\n");
         printf("2. Add a quote\n");

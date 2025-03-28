@@ -7,7 +7,7 @@
 #include <string.h>
 #include <time.h>
 
-#define MAX_QUOTES 10
+#define MAX_QUOTES 100
 #define MAX_LENGTH 256
 
 void print_quote(char **quotes, int index);
